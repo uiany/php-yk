@@ -1,0 +1,127 @@
+/*---------------------------------------------------------------------------------
+
+创建多个module.css结尾的文件，YKView会自动合并。
+
+按以下格式注释时，YKVIEW在解析模版自动切分为对应用小文件
+
+第一种，所有该module下的的页面共享该段CSS
+---------------------------------------------------------------------------------
+** module **
+** end **
+
+第二种，所有该module以及该controller下的页面共享该段CSS
+---------------------------------------------------------------------------------
+** module/controller **
+** end **
+
+第三种，此module下的此controller下的action独享该段CSS
+---------------------------------------------------------------------------------
+** module/controller/action **
+** end **
+
+第四种，用逗号分隔多个mca达到复杂的CSS共享
+---------------------------------------------------------------------------------
+** module/controller/action,module2,module3/controller3 **
+** end **
+
+
+---------------------------------------------------------------------------------*/
+
+
+/** default::main **/
+
+.leftbox dl{padding:5px 11px 15px;}
+.leftbox dl dt{line-height:24px; font-size:14px; font-weight:600;}
+.leftbox dl dd{line-height:20px; margin-top:7px;}
+
+.content .blog{padding:10px 21px 37px;}
+.content .blog h3{font-size:16px; font-weight:600; line-height:37px; border-bottom:2px solid #21b53e; color:#e26b23;}
+.content .blog h3 span{color:#353535; margin-right:17px;}
+.content .blog .cont{line-height:22px; margin:17px 0 0; text-indent:1em;}
+
+.content .blog .foot{padding:27px 0 4px; line-height:23px; border-bottom:1px solid #21b53e;}
+.content .blog .foot a{}
+.content .blog .foot a.comment{color:#593af6; margin-left:11px;}
+.content .blog .foot a.category{color:#e67d20; margin-right:11px;}
+/** end **/
+
+/** logging::login **/
+body{background:#cad8fb;}
+.login{margin-top:135px; position:relative;}
+.login_form{position:absolute; left:50%; margin-left:-315px;}
+.line{margin-bottom:12px;}
+.line .focus_m{padding-left:32px;}
+.line b{position:absolute; width:16px; height:14px; left:7px; top:12px;}
+.line .m_user{background:url('{IMG}/common/login_ico.png') no-repeat -4px -5px;}
+.line .m_pwd{background:url('{IMG}/common/login_ico.png') no-repeat -28px -5px;}
+.line input{height:32px; width:260px; padding-left:31px; font-size:14px;}
+.pline{line-height:24px; margin-bottom:12px;}
+.blogin{width:140px; font-size:14px;}
+
+.login_sns{margin-left:505px;}
+.login_sns .sns{margin:0 50px 0 0;}
+.sns_list{width:270px;}
+.login_sns .sns a{float:left; width:135px; height:60px; line-height:60px; text-align:center; vertical-align:middle; text-indent:-9999em;}
+.login_sns .sns a.qq{background:url('{IMG}/sns/qq_login.png') no-repeat 40px 6px #fff;}
+.login_sns .sns a.sina{background:url('{IMG}/sns/sina_login.png') no-repeat 40px 9px #fff;}
+.login_sns .sns a:hover{background-color:#efefef;}
+.login_sns .sns_tips{line-height:21px; margin-top:7px;}
+
+.login_other{margin:12px 0 0;}
+.login_other a{margin-right:11px;}
+/** end **/
+
+/** logging::register **/
+body{background:#cad8fb;}
+.frombox{margin:80px auto 0; width:900px;}
+.nav_title{line-height:32px; font-size:16px; border-bottom:2px solid #777777; padding-left:17px;}
+.ipt_box{padding:0 107px; margin:31px 0 0;}
+.line{margin-top:11px; background:#fff; width:305px; border:1px solid #fff; position:relative; line-height:34px; height:34px;}
+.line .focus_m{position:absolute; left:0; top:1px; line-height:34px; padding-left:50px; color:#C9C9C9;}
+.line b{position:absolute; width:45px; height:34px; left:0px; top:1px; font-size:14px; font-weight:400; text-align:right;}
+.line .txt{border:1px; height:32px; margin-left:50px; padding:0; width:252px;}
+.line .txt:focus{box-shadow:none; border:none;}
+.line2{margin-top:7px; line-height:18px;}
+.line3{margin-top:11px;}
+.verify .line{width:190px; float:left;}
+.verify .line .txt{width:130px; margin-left:50px;}
+.verify .line .focus_m{padding-left:50px;}
+.verify #verify_btn{margin:11px 0 0 5px; float:left; width:60px; padding:0 0px; width:110px;}
+.breg{width:140px; font-size:14px;}
+.agree{line-height:23px;}
+/** end **/
+
+/** admin_setting **/
+.setting{margin:30px 15px 0;}
+.setting h4{line-height:26px; font-size:13px; font-family:"Microsoft YaHei"; border-bottom:2px solid #ccc; text-indent:1em;}
+.setting .line{margin:7px 0 5px; line-height:30px;}
+.setting .line span{float:left; width:180px; text-align:right;}
+.setting .line .cont{margin-left:180px;}
+.cont label{margin-right:11px;}
+.cont .txt{width:540px;}
+.btnline{padding-top:11px;}
+/** end **/
+
+/** admin_post,admin_category **/
+.cpnav{height:36px; margin:9px 0 15px;}
+.cpnav h2{line-height:36px; font-size:23px; color:#464646; font-family:HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",sans-serif; font-weight:400; margin-left:42px;}
+.cpnav b{width:34px; height:36px; float:left; background:url("{IMG}/common/icons32.png") no-repeat -552px -5px;}
+
+/** end **/
+
+/** admin_post **/
+.post{}
+.post .line{margin-top:11px;}
+.title{}
+.title .txt{width:796px;}
+.article{}
+/** end **/
+
+/** admin_category **/
+.category{}
+dl{line-height:32px;}
+dl dt{float:left; width:330px;}
+dl dt .txt{width:310px;}
+dl dd{padding-top:1px;}
+.add{margin-top:21px;}
+/** end **/

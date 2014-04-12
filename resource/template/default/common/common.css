@@ -1,0 +1,319 @@
+/* -----------------------------------------------
+
+MAIN css  主文件css，全站通用
+
+----------------------------------------
+//常用变量详解
+
+{IMG}  			//图片位置，指系统主图片目录 resource/image
+{IMGEX}			//模版目录，对应的模版目录 /image
+
+----------------------------------------
+关于 CSS Hack 的说明：
+
+	所有 IE浏览器适用：	.ie_all .foo { ... }
+	IE6 专用：			.ie6 .foo { ... }
+	IE7 专用：			.ie7 .foo { ... }
+	IE8 专用：			.ie8 .foo { ... }
+	----------------------------------------
+	依此类推
+
+----------------------------------------
+CSS 注释示例：
+
+	Name:			模块名称
+	Level:			级别（Global, Channel, Function）
+	Dependent:		依赖关系，该模块必须依赖于何种模块
+	Sample:			用法示例，或指出改模块所作用的直接页面
+	Explain:		附加说明
+	Author:			创建者 日期(两位数年月日时)
+	Last Modify:	最终修改者 日期(两位数年月日
+
+----------------------------------------
+
+----------------------------------------------- */
+
+*{word-wrap:break-word; outline:none;}
+html{font-family: Arial,Helvetica,sans-serif;}
+body{background-image:url(about:blank); font-size:12px; line-height:16px; color:#434343;}
+body, ul, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset { margin:0; padding:0; }
+ul{ list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:12px; }
+a{ color:#0088cc; text-decoration:none;}
+a:hover { text-decoration:underline;}
+a img{ border:none; }
+a.out {outline: none;}
+em, cite, th, i, pre, s{ font-style:normal; font-weight:normal; text-decoration:none;}
+table{ border-collapse:collapse; }
+th{ text-align:left; }
+label, .pointer { cursor:pointer; }
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		清除浮动，以准备下一行, 但注意如果position: absolute后高度问题可能引起内滚动条
+	Author:			xiaoan
+*/
+.clear{clear:both;}
+.clearfix{overflow:auto; zoom:1; display:block;}
+.clearfix:after{content:" "; clear:both; display:block; line-height:0; height:0; visibility:hidden;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		改写表单元素, 特殊处需要对此处定义的属性进行重置
+	Author:			xiaoan
+*/
+textarea, input, select{resize:none; vertical-align:middle; font-family:Tahoma,"宋体";}
+button{font-family:"Microsoft YaHei";}
+input, textarea{padding: 3px 2px 1px; resize:none;}
+select{line-height:25px; height:25px;}
+input, textarea, select{border:1px solid #CCCCCC; border-radius:2px; color:#555555; transition:border 0.2s linear 0s, box-shadow 0.2s linear 0s;}
+input:focus, textarea:focus{border:1px solid rgba(82, 168, 236, 0.8); box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6); outline: 0 none;}
+
+.radio, .checkbox{border:none; background:none; vertical-align:middle; margin-right:3px; margin-left:-1px; vertical-align: -2px;}
+.txt{line-height:22px; height:22px;}
+.txtarea{line-height:21px; border:1px solid #c6cbc2;}
+.txtarea_auto{overflow:auto; outline:none;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		ajax提示默认区域, 在模版里已定义相应的div
+	Author:			xiaoan
+*/
+#ajaxwaitid{position:fixed; right:0; top:0; padding:0 5px; line-height:25px; background:#DD0000; color:#ffffff; z-index:1000;}
+.ie7 #ajaxwaitid{padding:0;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		字体：微软雅默
+	Author:			xiaoan
+*/
+.yahei{font-family:"Microsoft YaHei";}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		隐藏
+	Author:			xiaoan
+*/
+.hide{display:none !important;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Author:			xiaoan
+	Sample:			<a href="" class="b b28"></a>
+	Explain:		常用小按扭、数字代表按扭的高度	
+*/
+.b{display:inline-block; height:24px; line-height:1.8; padding:0 14px; background:#e1e1e1; font-family:"Microsoft YaHei"; font-size:12px; font-weight:400; letter-spacing:0px; text-align:center;}
+.b:hover{text-decoration:none; color:#dcdcdc !important;}
+
+.b26{height:26px; line-height:26px;}
+.b28{height:28px; line-height:28px; padding:0 16px;}
+.b30{height:30px; line-height:30px; padding:0 18px;}
+.b32{height:32px; line-height:32px; padding:0 20px;}
+.b34{height:34px; line-height:34px; padding:0 22px;}
+.b36{height:36px; line-height:36px; padding:0 24px;}
+.b40{height:40px; line-height:40px; padding:0 26px;}
+
+.b189330{background:#189330; color:#fff;}
+.bebad18{background:#ebad18; color:#fff;}
+.b4c81eb{background:#4c81eb; color:#fff;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		at弹层、响应于js事件 $at()
+	Author:			xiaoan
+*/
+.at_list{border:1px solid #cccccc; background:none no-repeat 0 0 scroll #ffffff; padding:1px; color:#666666;}
+.at_list ul{clear:both; overflow:hidden;}
+.at_list ul li{font-family:Arial, Helvetica, sans-serif;}
+.at_list ul li.at_title{padding:5px 10px;}
+.at_list ul li a{color:#666666; padding:5px 10px; display:block; white-space:nowrap; text-decoration:none;}
+.at_list ul li a:hover, .at_list ul li.cur{background:#EEEEEE; text-decoration:none;}
+
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		dialog CSS	
+	Author:			xiaoan
+*/
+.dialogbox{}
+.dialogbox .dialogbg{background:url('{IMG}/dialog/layer_bg.png') repeat scroll 0 0 transparent; padding:4px;}
+.dialogbox .noborder{background:none; padding:0;}
+.dialogbox .fwin{position:relative;}
+.dialogbox .y_main{border:1px solid #C6C6C6;}
+.dialogbox .fwin td{background:#ffffff;}
+.dialogbox .alertbox{border:1px solid #F9F2A7; background:none repeat 0 0 scroll #FEFFE5;}
+.dialogbox .y_title{line-height:30px; height:30px; background:none repeat scroll 0 0 #F0F0F0; text-indent:1em; font-weight:400; color:#666666}
+.dialogbox .y_close{position:absolute; right:5px; top:7px; text-indent:0; font-family:"宋体"; width:18px; text-align:center; line-height:18px; height:18px; background:url("{IMG}/dialog/close.png") no-repeat 0px -1px;}
+.dialogbox .y_close:hover{text-decoration:none; color:#519dd2; background-position:-25px -1px;}
+.dialogbox .titleClose{right: -17px; top: -1px; background-color:transparent; background-position:-25px -1px;}
+.dialogbox .y_content{line-height:21px; font-size:14px; color:#565656; min-width:96px;}
+.dialogbox .y_icon{padding:8px 0 0 50px; min-height: 40px; height: auto !important; height: 40px; line-height: 160%; float:left; overflow:hidden; background:url('{IMG}/dialog/icon.png') no-repeat 0 0 scroll;}
+.dialogbox .error{background-position:-51px 2px;}
+.dialogbox .success{background-position: 6px 2px;}
+.dialogbox .alert{background-position:-107px 2px;}
+.dialogbox .confirm{background-position:-164px 2px;}
+.dialogbox .small_error, .dialogbox .small_success, .dialogbox .small_alert, .dialogbox .small_confirm{padding:1px 0px 0 16px; min-height:18px; height:18px; line-height:18px;}
+.dialogbox .small_error{background-position:-67px -65px;}
+.dialogbox .small_success{background-position:-11px -65px;}
+.dialogbox .small_alert{background-position:-124px -65px;}
+.dialogbox .small_confirm{background-position:-181px -65px;}
+.dialogbox .y_text{}
+.dialogbox .textico{margin:10px 0 0 60px;}
+.dialogbox .textsmallico{margin:1px 20px 0 24px;}
+.dialogbox .y_buttonBg{padding:0 8px;}
+.dialogbox .y_button{text-align:right; height:32px; padding:10px 0 5px 0;}
+.dialogbox .y_button button{line-height:16px; margin-left:10px; font-weight:300; font-family:"Microsoft YaHei"; cursor:pointer; display: inline-block; letter-spacing: 2px; padding:5px 8px; text-align:center; overflow:visible; width:auto; background:#DDDDDD repeat-x 0 0; color:#333333; border:1px solid #999999;}
+.ie7 .dialogbox .y_button button, .ie6 .dialogbox .y_button button{line-height:1;}
+.dialogbox .y_button button:hover{border-color:#ccc;}
+.dialogbox .y_button button:focus{outline: 0 none;}
+.dialogbox .y_button button[disabled]{background: none repeat scroll 0 0 #DDDDDD; border: 1px solid #999999; box-shadow: none; color: #666666; cursor: default; opacity: 0.5;}
+/*可以在这里定义按扭的样式*/
+.dialogbox .y_button button.light{color:#fff; border:1px solid #16a9d9; background:#12a4d4 repeat-x 0 0;}
+.dialogbox .y_button button:hover.light{border-color:#0d8cb5;}
+.dialogbox .y_resize{width:8px; height:8px; position:absolute; right:0; bottom:0; cursor:se-resize;}
+.dialogbox .alertbox .y_text{font-size:12px; padding-right:17px;}
+.dialogbox .alertbox .arrow_top, .dialogbox .alertbox .arrow_right, .dialogbox .alertbox .arrow_bottom, .dialogbox .alertbox .arrow_left{background:url('{IMG}/common/layer_arrow.png') no-repeat 0 0 scroll transparent; position:absolute; display:block;}
+.dialogbox .alertbox .arrow_bottom, .dialogbox .alertbox .arrow_top{width:19px; height:10px;}
+.dialogbox .alertbox .arrow_right, .dialogbox .alertbox .arrow_left{width:10px; height:19px;}
+.dialogbox .alertbox .arrow_bottom{margin:7px auto 0; left:20px; bottom:-9px;}
+.dialogbox .alertbox .arrow_top{margin:0 auto 7px; left:20px; top:-9px; background-position:-20px 0;}
+.dialogbox .alertbox .arrow_right{margin:auto 0 0 7px; right:-9px; top:5px; background-position: -20px -20px;}
+.dialogbox .alertbox .arrow_left{margin:0 7px 0 0; left:-9px; top:5px; background-position:0 -20px;}
+
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		nav top CSS	
+	Author:			xiaoan
+*/
+.nav{line-height:45px; height:45px; background:#4f4f4f; position:fixed; top:0; left:0; width:100%; z-index:99;}
+.nav .mainbox{position:relative;}
+.nav .yk_logo{width:150px; position:absolute; left:0; background:url('{IMG}/common/logo.png') no-repeat 0 0; height:45px;}
+.nav .yk_nav{line-height:45px; margin-left:155px; float:left;}
+.nav .yk_title{float:left; color:#ffffff;}
+.nav .yk_title .yk_tab{color:#ffffff; font-size:14px; padding:0 18px; position:relative; line-height:45px; display:inline-block;}
+.nav .yk_title a.yk_tab:hover{background:#2e2e2e; text-decoration:none;}
+.nav .yk_tab i{padding:11px 8px 11px 4px; line-height:15px; height:5px;}
+.nav .yk_tab .yk_arrow{position:absolute; top:21px; display:inline-block; line-height:13px; vertical-align:middle; font-size:12px; width:7px; height:4px; overflow:hidden;}
+.nav .yk_tab .yk_arrow em{margin:0 0 0 -2px; position:absolute; top:-8px;}
+.nav .yk_user{float:right; line-height:45px;}
+.nav .yk_setting{float:left; position:relative;}
+.nav .yk_setting, .nav .yk_setting a.yk_tab{color:#fff;}
+.nav .yk_setting .yk_tab{padding:0 12px; margin:0; display:block; line-height:45px; border:1px solid #4f4f4f; border-top:none; border-bottom:none;}
+.nav .yk_setting a.yk_tab:hover{background:#2e2e2e; text-decoration:none;}
+
+.nav .current{background:#fff; border-top:none; border-bottom:none; box-shadow:0 2px 3px rgba(0,0,0,.4) inset; border-radius:2px 2px 0 0;}
+.nav .current a.yk_tab{color:#000;}
+.nav .current a.yk_tab:hover{background:none;}
+
+.layer{position:absolute; display:none;}
+.nav .yk_setting .layer{right:0px; top:45px; border:1px solid #4f4f4f; border-top:none;}
+.nav .yk_setting .layer{background:#fff; width:108px; line-height:26px !important; padding:7px 0 1px;}
+.nav .yk_setting .layer li{padding:0;}
+.nav .yk_setting .layer a{padding:0; text-align:left; color:#666; display:block; line-height:26px; text-indent:1em; margin:0;}
+.nav .yk_setting .layer a:hover{background:#E6E6E6; text-decoration:none;}
+.nav .yk_setting .layer a.line{border-top:1px solid #ccc; background:#F2F2F2; color:#5259db;}
+
+.blanktop{height:45px; position:relative;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		showmessage CSS	
+	Author:			xiaoan
+*/
+.showmessage{width:800px; margin:0 auto;}
+.showmessage .message{margin:150px 0 0; background:#e4f2ff; padding:17px 73px 21px;}
+.showmessage .message h3{font-size:14px; font-weight:600; line-height:27px;}
+.showmessage .message h3.right{color:#20b427;}
+.showmessage .message h3.fail{color:#e07c19;}
+.showmessage .message .icon{float:left; width:50px; height:50px;}
+.showmessage .message .ico_right{background:url({IMG}/common/success_bg.gif) 0 0 no-repeat;}
+.showmessage .message .ico_fail{background:url({IMG}/common/error_bg.gif) 0 0 no-repeat;}
+.showmessage .message p{line-height:24px; font-size:12px; font-weight:400;}
+
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		操作提示 CSS	
+	Author:			xiaoan
+*/
+.layer_success{background:#68af02;}
+.layer_success .y_text{color:#ffffff;}
+.layer_failure{color:#ed582a;}
+.layer_success .y_text, .layer_failure .y_text{color:#ffffff;}
+.layer_custom{color:#6fa4c2;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		input 的focus的提示	
+	Author:			xiaoan
+	Example:		<div class="line"><input><div class="focus_m">tips</div></div>
+*/
+.line{position:relative; line-height:34px; z-index:99;}
+.line .txt, .line .textarea{width:240px; z-index:98;}
+.line .focus_m{position:absolute; left:0; top:0; line-height:36px; color:#C9C9C9; padding-left:3px; z-index:97;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		tags的样式	
+	Author:			xiaoan
+	Example:		<div class="tags clearfix"><span>食材1<a href="#">×</a></span><span>食材1<a href="#">×</a></span><span>食材1<a href="#">×</a></span></div>
+*/
+.tags{}
+.tags span{float:left; position:relative; line-height:26px; background:#dff0d8; border-radius:2px; padding:0 24px 0 7px; margin:7px 13px 0 0;}
+.tags span:hover{background:#d9edf7;}
+.tags span a{position:absolute; right:7px; font-size:15px;}
+
+.ymoretab{}
+.ymoretab ul{position:relative; overflow:hidden;}
+.ymoretab ul li{float:left; cursor:pointer;}
+.ymoretab ul li{padding:0 5px; line-height:24px; border:1px solid #ccc; border-radius:3px 3px 0 0; margin-right:5px; position:relative; top:1px; z-index:99;}
+.ymoretab ul li.cur{background:#ccc;}
+.ymoretab .sbox{border:1px solid #ccc;}
+.ymoretab .stitle{line-height:26px;}
+.ymoretab .stitle span{line-height:22px; padding:0px 13px; cursor:pointer;}
+.ymoretab .stitle span.cur{font-weight:600;}
+.ymoretab .slist{line-height:21px; padding-bottom:11px;}
+.ymoretab .slist span{margin:2px 7px; padding:1px 4px; line-height:20px; border:1px solid #dff0d8; float:left; cursor:pointer;}
+.ymoretab .slist span.cur{border-color:#1469e9;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		简单的link, a
+	Author:			xiaoan
+	Example:		<a class=""></a>
+*/
+a.act{color:#0088CC; text-decoration:none; border-radius:2px; padding:6px 10px;}
+a.act:hover{background:#EEEEEE;}
+
+/*
+	Name:			monzila
+	Level:			global
+	Explain:		应用于编辑器的CSS
+	Author:			xiaoan
+*/
+.content{}
+.content li { list-style-type: disc; margin-left: 2em; }
+.content ol { *margin: 0; padding: 0; }
+.content .litype_1 li, .content ol li { list-style-type: decimal; }
+.content .litype_2 li { list-style-type: lower-alpha; }
+.content .litype_3 li { list-style-type: upper-alpha; }
+.content div.quote, .content div.blockcode { margin: 10px 0; padding: 10px 10px 10px 65px; }
+.content div.quote { padding-bottom: 5px; background: #F9F9F9 url({IMG}/common/icon_quote_s.gif) no-repeat 20px 6px; }
+.content div.quote blockquote { margin: 0; padding: 0 65px 5px 0; background: url({IMG}/common/icon_quote_e.gif) no-repeat 100% 100%; line-height: 1.6em; }
+.content div.blockcode { border: 1px solid #CCC; background: #F7F7F7 url({IMG}image/common/codebg.gif) repeat-y 0 0; }
+.content div.blockcode blockquote { margin: 0; }
